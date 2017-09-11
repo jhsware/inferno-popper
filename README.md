@@ -1,23 +1,15 @@
-## React Popper
+# inferno-popper
 
-[![npm version](https://badge.fury.io/js/react-popper.svg)](https://badge.fury.io/js/react-popper)
-[![Dependency Status](https://david-dm.org/souporserious/react-popper.svg)](https://david-dm.org/souporserious/react-popper)
-
-React wrapper around [PopperJS](https://github.com/FezVrasta/popper.js/).
+Inferno wrapper around [PopperJS](https://github.com/FezVrasta/popper.js/) ported from [react-popper](https://github.com/souporserious/react-popper).
 
 ## Install
 
-`npm install react-popper --save`
-
-```html
-<script src="https://unpkg.com/react-popper/dist/react-popper.js"></script>
-(UMD library exposed as `ReactPopper`)
-```
+`npm install inferno-popper --save`
 
 ## Usage
 
 ```js
-import { Manager, Target, Popper, Arrow } from 'react-popper'
+import { Manager, Target, Popper, Arrow } from 'inferno-popper'
 
 const PopperExample = () => (
   <Manager>
@@ -41,7 +33,7 @@ const PopperExample = () => (
 This is a useful way to interact with custom components. Just make sure you pass down the refs properly.
 
 ```js
-import { Manager, Target, Popper, Arrow } from 'react-popper'
+import { Manager, Target, Popper, Arrow } from 'inferno-popper'
 
 const PopperExample = () => (
   <Manager>
@@ -173,11 +165,11 @@ An `Arrow`'s child may be one of the following:
 
 clone repo
 
-`git clone git@github.com:souporserious/react-popper.git`
+`git clone git@github.com:jhsware/inferno-popper.git`
 
 move into folder
 
-`cd ~/react-popper`
+`cd ~/inferno-popper`
 
 install dependencies
 
