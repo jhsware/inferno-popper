@@ -1,6 +1,6 @@
 {
   "name": "inferno-popper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Inferno wrapper around PopperJS.",
   "main": "dist/index.js",
   "scripts": {
