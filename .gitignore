@@ -9,7 +9,8 @@
 node_modules
 npm-debug.log
 dist
-lib
+docs
+coverage
 
 # General Files
 .sass-cache
@@ -19,3 +20,4 @@ lib
 .cache
 .project
 .tmp
+.vscode
