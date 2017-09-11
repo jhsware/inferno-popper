@@ -2,16 +2,72 @@ import { Section, Stage, Scene, Code, Narrative } from '../components.jsx'
 
 export default function () {
   return (
-    <Section title="Simple Buttonm Tooltip">
+    <Section title="Multiple Pop-Overs">
       <Narrative>
         <p></p>
       </Narrative>
       <Stage>
-        <h3>Standard alert box</h3>
         <Scene>
           <MultipleExample />
           <Code>
-{`<MultipleExample />`}
+{`class MultipleExample extends Component {
+  
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      placement: 'bottom'
+    }
+  }
+
+  render() {
+    const { placement } = this.state
+    return (
+      <div>
+        <select
+          value={placement}
+          onChange={e => this.setState({ placement: e.target.value })}
+        >
+          {placements.map(placement =>
+            <option key={placement} value={placement}>
+              {placement}
+            </option>
+          )}
+        </select>
+        <Manager>
+          <Target style={{ width: 120, height: 120, background: 'red', margin: '5rem auto' }}>
+            Box
+          </Target>
+          <Popper placement="left">
+          {({ popperProps }) =>
+            <div {...popperProps} className="popper">
+              Content Left
+              <Arrow>
+                {({ arrowProps }) =>
+                  <span {...arrowProps} className="popper__arrow" />}
+              </Arrow>
+            </div>}
+          </Popper>
+          <Popper className="popper" placement="right">
+            Content Right
+            <Arrow className="popper__arrow" />
+          </Popper>
+          <Portal>
+            <Popper
+              className="popper"
+              placement={placement}
+              modifiers={modifiers}
+            >
+              Dynamic Content in a Portal!
+              <Arrow className="popper__arrow" />
+            </Popper>
+          </Portal>
+        </Manager>
+      </div>
+    )
+  }
+}
+`}
           </Code>
         </Scene>
       </Stage>
@@ -103,7 +159,7 @@ class MultipleExample extends Component {
           )}
         </select>
         <Manager>
-          <Target style={{ width: 120, height: 120, background: 'red' }}>
+          <Target style={{ width: 120, height: 120, background: 'red', margin: '0 auto 5rem' }}>
             Box
           </Target>
           <Popper placement="left">

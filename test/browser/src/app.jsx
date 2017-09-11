@@ -11,7 +11,7 @@ class AppLayout extends Component {
   getChildContext() {
     return {
       pageLinks: [
-        {link: "/inferno-bootstrap-docs/basic", title: "Basic"}
+        {link: "/inferno-popper-docs/basic", title: "Basic"}
       ]
     }
   }

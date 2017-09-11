@@ -20,6 +20,10 @@ html {
   font-family: 'Lato', sans-serif;
 }
 
+.TooltipContainer {
+  margin: 5rem auto;
+}
+
 select {
   margin-bottom: 3rem;
 }
@@ -91,4 +95,122 @@ select {
   top: calc(50% - 5px);
   margin-left: 0;
   margin-right: 0;
+}
+
+
+
+/**
+  Some general page styling
+ */
+
+.Menu {
+  max-width: 65rem;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.Menu a {
+  margin-right: 2em;
+}
+
+.PageMenuContainer {
+  max-width: 65rem;
+  width: 100%;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.PageMenu {
+  position: absolute;
+  right: -2rem;
+  transform: translateX(100%);
+}
+
+.PageMenu-Header {
+  padding: 0 0.6em 0.5em;
+  border-bottom: 2px #ddd dashed;
+}
+
+.PageLink {
+  font-weight: 500;
+}
+
+.SectionLink {
+  color: #777;
+}
+
+.Content {
+  max-width: 65rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Make sure we don't get jumps att beginning and end of animation */
+
+.ExampleSection {
+  padding: 0 0 5rem;
+}
+
+.ExampleStage {
+  border: 1px solid lightgray;
+  background-color: #fdfdfd;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.ExampleStage > :first-child {
+    margin-top: 0em;
+}
+
+.ExampleStage > :last-child {
+    margin-bottom: 0em;
+}
+
+.ExampleStage :last-child .ExampleScene-Code:last-child {
+    margin-bottom: -1rem;
+}
+
+.ExampleScene {
+  margin: 1rem 0;
+}
+
+.ExampleScene .card {
+  max-width: 320px;
+}
+
+.ExampleScene .nav-tabs {
+  margin-bottom: 1rem;
+}
+
+.ExampleScene-Code {
+  font-family: Courier New, Courier, monospace;
+  margin: 1rem -1rem;
+} .ExampleScene-Code pre {
+  padding: 0.5rem 0.85rem;
+  margin: 0;
+}
+
+pre[class*="language-"]:after {
+  transform: rotate(1.7deg);
+  box-shadow: 0px 13px 8px #eee;
+}
+pre[class*="language-"]:before {
+  transform: rotate(-1.7deg);
+  box-shadow: 0px 13px 8px #eee;
+}
+
+.ExampleNarrative {
+  
+}
+
+.ExampleStage > h3 {
+  font-size: 1.1em;
+  margin-top: 2em;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 0.5em;
+}
+
+.ExampleStage > h3:first-child {
+  margin-top: 0.5em;
 }
