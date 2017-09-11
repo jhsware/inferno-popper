@@ -1,12 +1,11 @@
 {
-  "name": "react-popper",
-  "version": "0.7.2",
-  "description": "React wrapper around PopperJS.",
+  "name": "inferno-popper",
+  "version": "0.1.0",
+  "description": "Inferno wrapper around PopperJS.",
   "main": "lib/index.js",
   "files": [
     "dist",
-    "lib",
-    "react-popper.d.ts"
+    "lib"
   ],
   "scripts": {
     "test": "echo \"ok\"",
