@@ -1,42 +1,45 @@
-import React, { Component, createElement } from 'react'
-import PropTypes from 'prop-types'
+import Inferno from 'inferno'
+import Component from 'inferno-component'
+import createElement from 'inferno-create-element'
 import PopperJS from 'popper.js'
 import isEqual from 'is-equal-shallow'
 
 const noop = () => null
 
 class Popper extends Component {
-  static contextTypes = {
-    popperManager: PropTypes.object.isRequired,
-  }
+  constructor (props) {
+    super(props)
 
-  static childContextTypes = {
-    popper: PropTypes.object.isRequired,
-  }
+    this.state = {}
 
-  static propTypes = {
-    component: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-    innerRef: PropTypes.func,
-    placement: PropTypes.oneOf(PopperJS.placements),
-    eventsEnabled: PropTypes.bool,
-    modifiers: PropTypes.object,
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  }
+    this._setArrowNode = node => {
+      this._arrowNode = node
+    }
+  
+    this._getTargetNode = () => {
+      return this.context.popperManager.getTargetNode()
+    }
 
-  static defaultProps = {
-    component: 'div',
-    placement: 'bottom',
-    eventsEnabled: true,
-    modifiers: {},
+    this._updateStateModifier = {
+      enabled: true,
+      order: 900,
+      fn: data => {
+        if (
+          (this.state.data && !isEqual(data.offsets, this.state.data.offsets)) ||
+          !this.state.data
+        ) {
+          this.setState({ data })
+        }
+        return data
+      }
+    }
   }
-
-  state = {}
 
   getChildContext() {
     return {
       popper: {
-        setArrowNode: this._setArrowNode,
-        getArrowStyle: this._getArrowStyle,
+        setArrowNode: this._setArrowNode.bind(this),
+        getArrowStyle: this._getArrowStyle.bind(this),
       },
     }
   }
@@ -62,27 +65,6 @@ class Popper extends Component {
     this._destroyPopper()
   }
 
-  _setArrowNode = node => {
-    this._arrowNode = node
-  }
-
-  _getTargetNode = () => {
-    return this.context.popperManager.getTargetNode()
-  }
-
-  _updateStateModifier = {
-    enabled: true,
-    order: 900,
-    fn: data => {
-      if (
-        (this.state.data && !isEqual(data.offsets, this.state.data.offsets)) ||
-        !this.state.data
-      ) {
-        this.setState({ data })
-      }
-      return data
-    },
-  }
 
   _updatePopper() {
     this._destroyPopper()
@@ -122,7 +104,7 @@ class Popper extends Component {
     }
   }
 
-  _getPopperStyle = () => {
+  _getPopperStyle() {
     const { data } = this.state
 
     // If Popper isn't instantiated, hide the popperElement
@@ -143,11 +125,11 @@ class Popper extends Component {
     }
   }
 
-  _getPopperPlacement = () => {
+  _getPopperPlacement() {
     return !!this.state.data ? this.state.data.placement : undefined
   }
 
-  _getArrowStyle = () => {
+  _getArrowStyle() {
     if (!this.state.data || !this.state.data.offsets.arrow) {
       return {}
     } else {
@@ -157,7 +139,7 @@ class Popper extends Component {
   }
 
   render() {
-    const {
+    let {
       component,
       innerRef,
       placement,
@@ -166,6 +148,12 @@ class Popper extends Component {
       children,
       ...restProps
     } = this.props
+
+    // Default props
+    component = component || 'div'
+    placement = placement || 'bottom'
+    eventsEnabled === undefined ? true : eventsEnabled
+    modifiers = modifiers || {}
 
     const popperRef = node => {
       this._node = node

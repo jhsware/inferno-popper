@@ -1,5 +1,6 @@
-import React, { Component, createElement } from 'react'
-import PropTypes from 'prop-types'
+import Inferno from 'inferno'
+import Component from 'inferno-component'
+import createElement from 'inferno-create-element'
 
 const Arrow = (props, context) => {
   const { component = 'span', innerRef, children, ...restProps } = props
@@ -35,16 +36,6 @@ const Arrow = (props, context) => {
   }
 
   return createElement(component, componentProps, children)
-}
-
-Arrow.contextTypes = {
-  popper: PropTypes.object.isRequired,
-}
-
-Arrow.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  innerRef: PropTypes.func,
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 }
 
 export default Arrow

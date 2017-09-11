@@ -1,5 +1,6 @@
-import React, { Component, createElement } from 'react'
-import PropTypes from 'prop-types'
+import Inferno from 'inferno'
+import Component from 'inferno-component'
+import createElement from 'inferno-create-element'
 
 const Target = (props, context) => {
   const { component = 'div', innerRef, children, ...restProps } = props
@@ -27,16 +28,6 @@ const Target = (props, context) => {
   }
 
   return createElement(component, componentProps, children)
-}
-
-Target.contextTypes = {
-  popperManager: PropTypes.object.isRequired,
-}
-
-Target.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-  innerRef: PropTypes.func,
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
 }
 
 export default Target
