@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+deploy:
+  provider: npm
+  email: sebastian@urbantalk.se
+  api_key:
+    secure: mDqubDeBJkX0CFLvb2HBH3CyzApBYvYcclphxKIiXHuFuNZP1MzOFPPzWufBSiRxrn+b7axcwoCPUQvbtHsjC3/JegeveM1NpOgBjoBmSCTB5A/hwMAOwDXa4q6T1Fb1AEQ1iXA0ivCnrur4m1vK4bF7b8sxltICtLlsjQNzOiYV2GSPi0yVhKVumTZVxAMslSSKJlSAXTVhO+GHjtB0AaBzqi6t4N/ipwy76pivJ5jKvEfe5EbA4FY22akQwXbQxWpKFgJCObohmWjY/L+Sz6BAURm+hRKlZX9/RhQYgFa/cni/HPTQf1VyJBQlZRsAeUq1aA791dVyu9y4bELllDkzT+mmRis2x3kCvu3846j5YJRTBuovbRSl3Gfx3LhfCS/dXOHNd5cX165urcqJfQ23MMnnnnSmsADSLX+WPrKQbQSFy3GcJAAuX2ZwzNEoGggqFYyo6qeonRMcrTfeZ9DxicxznhhVKgnlT0FnQ0II8vk7SYR29axJQG0HZiCdZaILQpdO2IY7zOz3VVtUFlWlDYQKBhbjq/Blq+55VIpIDeFJnjuc4KptPI7R77iaT40nNF19hjcwrFD9SzPnft/CWSreDElGC4vzaIWcXW42hthm1VNUmBeWCQja4rXuGCShRNaOQzE8xjHtYuQGp90r9XhTl0W1J8R2VONA+Uc=
+  on:
+    tags: true
+    repo: jhsware/inferno-popper
