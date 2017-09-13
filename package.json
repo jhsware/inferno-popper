@@ -2,7 +2,7 @@
   "name": "inferno-popper",
   "version": "0.1.4",
   "description": "Inferno wrapper around PopperJS.",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"ok\"",
     "test-browser": "npm run build-test && node test/browser/server.js",
