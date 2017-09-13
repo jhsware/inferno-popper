@@ -45,7 +45,12 @@ class Popper extends Component {
   }
 
   componentDidMount() {
-    this._updatePopper()
+    // Some implementations render the popper before the target reference has
+    // been aquired so this 
+    const self = this
+    setTimeout(function () {
+      self._updatePopper()
+    }, 10)
   }
 
   componentDidUpdate(lastProps) {
