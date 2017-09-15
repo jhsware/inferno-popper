@@ -1,7 +1,7 @@
 module.exports = {
-  Arrow: require('./dist/Arrow').default,
-  Manager: require('./dist/Manager').default,
-  Popper: require('./dist/Popper').default,
-  Target: require('./dist/Target').default,
-  Travel: require('./dist/Travel').default
+  Arrow: require('./dist/Arrow'),
+  Manager: require('./dist/Manager'),
+  Popper: require('./dist/Popper'),
+  Target: require('./dist/Target'),
+  Travel: require('./dist/Travel')
 }
