@@ -36,10 +36,10 @@
     "url": "https://github.com/jhsware/inferno-popper/issues"
   },
   "peerDependencies": {
-    "inferno": "^3.8.0",
-    "inferno-component": "^3.8.0",
-    "inferno-create-element": "^3.8.0",
-    "inferno-shared": "^3.8.0"
+    "inferno": "^3.10.0",
+    "inferno-component": "^3.10.0",
+    "inferno-create-element": "^3.10.0",
+    "inferno-shared": "^3.10.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -61,13 +61,13 @@
     "bootstrap": "^4.0.0-beta",
     "express": "^4.15.4",
     "history": "^4.7.2",
-    "inferno": "^3.8.0",
-    "inferno-component": "^3.8.0",
-    "inferno-create-element": "^3.8.0",
-    "inferno-devtools": "^3.8.0",
-    "inferno-router": "^3.8.0",
-    "inferno-shared": "^3.8.0",
-    "inferno-test-utils": "^3.8.0",
+    "inferno": "^3.10.0",
+    "inferno-component": "^3.10.0",
+    "inferno-create-element": "^3.10.0",
+    "inferno-devtools": "^3.10.0",
+    "inferno-router": "^3.10.0",
+    "inferno-shared": "^3.10.0",
+    "inferno-test-utils": "^3.10.0",
     "jest": "^20.0.4",
     "prismjs": "^1.6.0",
     "sinon": "^2.3.8",

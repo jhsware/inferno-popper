@@ -27,7 +27,6 @@ module.exports = {
       test: /\.jsx$/,
       loader: 'babel-loader',
       query: {
-        // babel-loader doesn't pick up the transform-decorators-legacy plugin setting from babelrc entry in package.json
         plugins: babelPlugins
       }
     },
@@ -35,7 +34,6 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel-loader',
       query: {
-        // babel-loader doesn't pick up the transform-decorators-legacy plugin setting from babelrc entry in package.json
         plugins: babelPlugins
       }
     }]
