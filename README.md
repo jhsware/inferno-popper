@@ -1,12 +1,20 @@
 # inferno-popper
 
-Inferno wrapper around [PopperJS](https://github.com/FezVrasta/popper.js/) ported from [react-popper](https://github.com/souporserious/react-popper).
+Inferno wrapper for [PopperJS](https://github.com/FezVrasta/popper.js/) ported from [react-popper](https://github.com/souporserious/react-popper).
+
+## Compatibility
+
+inferno-popper 4.x supports Inferno v4 (master)
+
+inferno-popper 3.x supports Inferno v3 (InfernoV3 branch)
 
 ## Install
 
-`npm install inferno-popper --save`
+`$ npm install --save inferno-popper`
 
 ## Usage
+
+NOTE: There is an example of a dynamic popper if you check the browser test.
 
 ```js
 import { Manager, Target, Popper, Arrow } from 'inferno-popper'
@@ -161,7 +169,7 @@ An `Arrow`'s child may be one of the following:
   ```
 
 
-## Running Locally
+## Running Brower Test Locally
 
 clone repo
 
@@ -175,8 +183,8 @@ install dependencies
 
 `npm install`
 
-run dev mode
+run browser test
 
-`npm run dev`
+`$ npm run build && npm run build-test && node test/browser/server.js`
 
 open your browser and visit: `http://localhost:8080/`
