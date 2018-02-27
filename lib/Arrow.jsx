@@ -1,6 +1,5 @@
-import Inferno from 'inferno'
-import Component from 'inferno-component'
-import createElement from 'inferno-create-element'
+import { Component } from 'inferno'
+import { createElement } from 'inferno-create-element'
 
 const Arrow = (props, context) => {
   const { component = 'span', innerRef, children, ...restProps } = props

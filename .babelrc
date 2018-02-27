@@ -1,21 +1,16 @@
 {
-  "presets": [
-    "stage-0",
-    "es2015"
-  ],
+  "presets": ["stage-0","es2015"],
   "plugins": [
+    ["babel-plugin-inferno", {"imports": true}],
     "transform-object-rest-spread",
-    "babel-plugin-syntax-jsx",
-    "add-module-exports",
-    ["babel-plugin-inferno", {"imports": true}]
+    "add-module-exports"
   ],
   "env": {
     "test": {
       "plugins": [
+        ["babel-plugin-inferno", {"imports": true}],
         "transform-object-rest-spread",
-        "babel-plugin-syntax-jsx",
-        "add-module-exports",
-        ["babel-plugin-inferno", {"imports": true}]
+        "add-module-exports"
       ]
     }
   }

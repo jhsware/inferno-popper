@@ -1,13 +1,11 @@
-import Inferno from 'inferno'
-import Component from 'inferno-component'
+import { render, Component } from 'inferno'
 require('inferno-devtools')
-import { Router, Route, Redirect, IndexRoute, Link } from 'inferno-router'
+import { BrowserRouter, Route, Link } from 'inferno-router'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 import BasicPage from './BasicPage.jsx'
 
-class AppLayout extends Component {
-  
+class App extends Component {
   getChildContext() {
     return {
       pageLinks: [
@@ -18,24 +16,15 @@ class AppLayout extends Component {
 
   render () {
     return (
+      <BrowserRouter>
         <div className="Content">
-          {this.props.children}
+          <Route exact path="/" component={ BasicPage } />
         </div>
+      </BrowserRouter>
     )
   }
 }
 
 if (typeof window !== 'undefined') {
-  const browserHistory = createBrowserHistory()
-
-  const appRoutes = (
-    <Router history={ browserHistory }>
-      <Route path="/inferno-popper-docs" component={ AppLayout }>
-        <IndexRoute component={ BasicPage } />
-        <Route path="/basic" component={BasicPage} />
-      </Route>
-      <Redirect from="/*" to="/inferno-popper-docs" />
-    </Router>
-  )
-  Inferno.render(appRoutes, document.getElementById('app'))
+  render(<App />, document.getElementById('app'))
 }
