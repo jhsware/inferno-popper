@@ -1,6 +1,6 @@
 {
   "name": "inferno-popper",
-  "version": "0.2.0",
+  "version": "4.0.0",
   "description": "Inferno wrapper around PopperJS.",
   "main": "index.js",
   "files": [
@@ -37,9 +37,7 @@
   },
   "peerDependencies": {
     "inferno": "^4.0.3",
-    "inferno-component": "^4.0.3",
     "inferno-create-element": "^4.0.3",
-    "inferno-vnode-flags": "^4.0.3",
     "inferno-shared": "^4.0.3"
   },
   "dependencies": {
@@ -62,16 +60,13 @@
     "bootstrap": "^4.0.0",
     "express": "^4.15.4",
     "inferno": "^4.0.3",
-    "inferno-component": "^4.0.3",
     "inferno-create-element": "^4.0.3",
     "inferno-devtools": "^4.0.3",
     "inferno-router": "^4.0.3",
     "inferno-shared": "^4.0.3",
     "inferno-test-utils": "^4.0.3",
-    "inferno-vnode-flags": "^4.0.3",
     "jest": "^20.0.4",
     "prismjs": "^1.6.0",
-    "sinon": "^2.3.8",
     "webpack": "^3.11.0"
   }
 }

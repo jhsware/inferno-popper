@@ -1,10 +1,7 @@
-import { Component } from 'inferno'
+import { Component, createPortal } from 'inferno'
 import { createElement } from 'inferno-create-element'
-import {
-  Children,
-  unstable_renderSubtreeIntoContainer,
-  unmountComponentAtNode
-} from './compat'
+
+import { Children } from './compat'
 
 const noop = () => null
 
@@ -13,15 +10,18 @@ class Travel extends Component {
   constructor(props) {
     super(props)
 
-    this._portalNode = null
+    this.state = {
+      portalNode: null,
+      portalInstance: null
+    }
   }
 
   componentDidMount() {
-    this._renderPortal()
+    this._setupPortal()
   }
 
   componentDidUpdate() {
-    this._renderPortal()
+    this._updatePortal()
   }
 
   componentWillUnmount() {
@@ -55,41 +55,20 @@ class Travel extends Component {
     const renderToNode = this._getRenderToNode()
 
     // create a node that we can stick our component in
-    this._portalNode = document.createElement(renderTag)
+    const portalNode = document.createElement(renderTag)
 
     // append node to the render node
-    renderToNode.appendChild(this._portalNode)
+    renderToNode.appendChild(portalNode)
 
     // store the instance passed back to allow work to be done on it
-    this._portalInstance = typeof onMount === 'function'
-      ? onMount(this._portalNode)
-      : this._portalNode
-  }
+    const portalInstance = typeof onMount === 'function'
+      ? onMount(portalNode)
+      : portalNode
 
-  _renderPortal() {
-    const component = this._getComponent()
-
-    // if no component, bail out
-    if (!component) {
-      this._destroyPortal()
-      return
-    }
-
-    // if no portalNode found, create it
-    if (!this._portalNode) {
-      this._setupPortal()
-    }
-
-    // render component into the DOM
-    unstable_renderSubtreeIntoContainer(
-      this,
-      component,
-      this._portalNode,
-      () => {
-        // don't update until the subtree has finished rendering
-        this._updatePortal()
-      }
-    )
+    this.setState({
+      portalNode,
+      portalInstance
+    })
   }
 
   _updatePortal() {
@@ -118,19 +97,16 @@ class Travel extends Component {
   }
 
   _destroyPortal() {
-    if (this._portalNode) {
-      unmountComponentAtNode(this._portalNode)
-      this._portalNode.parentNode.removeChild(this._portalNode)
-    }
-    this._portalNode = null
+    this.state.portalNode.parentNode.removeChild(this._portalNode)
+    this.setState({
+      portalNode: null,
+      portalInstance: null
+    })
   }
 
   render() {
-    if (this.props.useArray) {
-      return Children.toArray(this.props.children)[0]
-    } else {
-      return null
-    }
+
+    return this.state.portalNode ? createPortal(this._getComponent(), this.state.portalNode) : null;
   }
 }
 

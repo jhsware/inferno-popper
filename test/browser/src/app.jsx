@@ -1,7 +1,6 @@
 import { render, Component } from 'inferno'
 require('inferno-devtools')
 import { BrowserRouter, Route, Link } from 'inferno-router'
-import createBrowserHistory from 'history/createBrowserHistory'
 
 import BasicPage from './BasicPage.jsx'
 
