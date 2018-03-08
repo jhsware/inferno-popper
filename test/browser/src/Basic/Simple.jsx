@@ -80,7 +80,7 @@ import Inferno from 'inferno'
 import Component from 'inferno-component'
 import createElement from 'inferno-create-element'
 
-import { Manager, Target, Popper, Arrow, Travel } from '../../../../lib/index'
+import { Manager, Target, Popper, Arrow, Travel } from '../../../../index'
 const Portal = Travel
 import PopperJS from '../../../../node_modules/popper.js/dist/umd/popper.js'
 const placements = PopperJS.placements
