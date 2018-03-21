@@ -36,9 +36,9 @@
     "url": "https://github.com/jhsware/inferno-popper/issues"
   },
   "peerDependencies": {
-    "inferno": "^4.0.3",
-    "inferno-create-element": "^4.0.3",
-    "inferno-shared": "^4.0.3"
+    "inferno": "^5.0.1",
+    "inferno-create-element": "^5.0.1",
+    "inferno-shared": "^5.0.1"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -51,7 +51,7 @@
     "babel-jest": "^20.0.3",
     "babel-loader": "^6.4.1",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-inferno": "^4.0.0",
+    "babel-plugin-inferno": "^5.0.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -59,12 +59,12 @@
     "babel-preset-stage-0": "^6.24.1",
     "bootstrap": "^4.0.0",
     "express": "^4.15.4",
-    "inferno": "^4.0.3",
-    "inferno-create-element": "^4.0.3",
-    "inferno-devtools": "^4.0.3",
-    "inferno-router": "^4.0.3",
-    "inferno-shared": "^4.0.3",
-    "inferno-test-utils": "^4.0.3",
+    "inferno": "^5.0.1",
+    "inferno-create-element": "^5.0.1",
+    "inferno-devtools": "^5.0.1",
+    "inferno-router": "^5.0.1",
+    "inferno-shared": "^5.0.1",
+    "inferno-test-utils": "^5.0.1",
     "jest": "^20.0.4",
     "prismjs": "^1.6.0",
     "webpack": "^3.11.0"
