@@ -1,17 +1,15 @@
 {
-  "presets": ["stage-0","es2015"],
+  "presets": [
+    ["env", { "modules": false }],
+    "stage-2",
+    "inferno-app"
+  ],
   "plugins": [
-    ["babel-plugin-inferno", {"imports": true}],
-    "transform-object-rest-spread",
-    "add-module-exports"
+    "transform-class-properties"
   ],
   "env": {
-    "test": {
-      "plugins": [
-        ["babel-plugin-inferno", {"imports": true}],
-        "transform-object-rest-spread",
-        "add-module-exports"
-      ]
+    "production": {
+
     }
   }
 }
