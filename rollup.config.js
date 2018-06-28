@@ -10,7 +10,7 @@ const baseConfig = (outputFormat) => {
   switch (outputFormat) {
     case 'umd':
     case 'cjs':
-      file = 'dist/' + outputFormat + '/react-popper' + (isProduction ? '.min' : '') + '.js';
+      file = 'dist/' + outputFormat + '/inferno-popper' + (isProduction ? '.min' : '') + '.js';
       break;
 
     default:
@@ -44,6 +44,7 @@ const baseConfig = (outputFormat) => {
       globals: {
         inferno: 'Inferno',
         'popper.js': 'Popper',
+        'inferno-create-element': 'infernoCreateElement'
       },
     },
   };

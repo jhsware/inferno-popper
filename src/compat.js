@@ -1,10 +1,13 @@
-import { isArray, isNullOrUndef } from 'inferno-shared';
+import {
+  isArray,
+  isNullOrUndef
+} from 'inferno-shared'
 
 /* COMPATIBILITY */
-var ARR = [];
+const ARR = [];
 
-export var Children = {
-  only: function only(children) {
+export const Children = {
+  only: function (children) {
     children = Children.toArray(children);
     if (children.length !== 1) {
       throw new Error("Children.only() expects only one child.");
@@ -12,14 +15,14 @@ export var Children = {
     return children[0];
   },
 
-  toArray: function toArray(children) {
+  toArray: function (children) {
     if (isNullOrUndef(children)) {
       return [];
     }
     // We need to flatten arrays here,
     // because React does it also and application level code might depend on that behavior
     if (isArray(children)) {
-      var result = [];
+      const result = [];
 
       flatten(children, result);
 

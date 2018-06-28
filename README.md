@@ -1,6 +1,6 @@
 # inferno-popper
 
-Inferno wrapper for [PopperJS](https://github.com/FezVrasta/popper.js/) ported from [react-popper](https://github.com/souporserious/react-popper).
+Inferno wrapper for [PopperJS](https://github.com/FezVrasta/popper.js/) ported from [inferno-popper](https://github.com/souporserious/inferno-popper).
 
 ## Compatibility
 inferno-popper 5.x supports Inferno v5 (master)

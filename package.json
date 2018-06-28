@@ -2,9 +2,9 @@
   "name": "inferno-popper",
   "version": "5.0.1",
   "description": "Inferno wrapper around PopperJS.",
-  "main": "dist/cjs/react-popper.js",
-  "umd:main": "dist/umd/react-popper.js",
-  "module": "lib/react-popper.js",
+  "main": "dist/cjs/inferno-popper.js",
+  "umd:main": "dist/umd/inferno-popper.js",
+  "module": "lib/inferno-popper.js",
   "types": "inferno-popper.d.ts",
   "files": [
     "dist",
@@ -14,8 +14,8 @@
   "scripts": {
     "build": "npm run build:clean && npm run build:es && npm run build:dist && npm run build:dist:prod",
     "build:clean": "rm -rf dist/ && rm -rf lib/",
-    "build:es": "babel src --out-dir lib && mv lib/index.js lib/react-popper.js",
-    "build:dist": "rollup -c",
+    "build:es": "cross-env NODE_ENV=development babel src --out-dir lib && mv lib/index.js lib/inferno-popper.js",
+    "build:dist": "cross-env NODE_ENV=development rollup -c",
     "build:dist:prod": "cross-env NODE_ENV=production rollup -c",
     "demo": "parcel --out-dir demo/dist demo/index.html",
     "prepare": "npm run build",

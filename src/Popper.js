@@ -2,6 +2,8 @@ import { Component } from 'inferno'
 import { createElement } from 'inferno-create-element'
 import PopperJS from 'popper.js'
 
+export const placements = PopperJS.placements
+
 class Popper extends Component {
   constructor (props) {
     super(props)

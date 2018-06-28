@@ -1,13 +1,13 @@
 ## CHANGELOG
 ### 0.7.2
-Fix `top` and `left` arrow calculation. Disregard the note below about changing the CSS positioning, this was an error on `react-popper`'s part.
+Fix `top` and `left` arrow calculation. Disregard the note below about changing the CSS positioning, this was an error on `inferno-popper`'s part.
 
 ### 0.7.1
-Support `top` and `left` arrow offsets together, be aware this most likely broke any prior CSS positioning your arrows [#37](https://github.com/souporserious/react-popper/pull/37)
+Support `top` and `left` arrow offsets together, be aware this most likely broke any prior CSS positioning your arrows [#37](https://github.com/souporserious/inferno-popper/pull/37)
 
-Fix `scheduleUpdate` call if `this._popper` does not exist [#38](https://github.com/souporserious/react-popper/pull/38)
+Fix `scheduleUpdate` call if `this._popper` does not exist [#38](https://github.com/souporserious/inferno-popper/pull/38)
 
-Add typescript definitions [#40](https://github.com/souporserious/react-popper/pull/40)
+Add typescript definitions [#40](https://github.com/souporserious/inferno-popper/pull/40)
 
 Upgrade to Popper.js 1.10.8
 
@@ -36,17 +36,17 @@ Pass down `scheduleUpdate` to `Popper` child function to allow programatic updat
 
 Upgrade to Popper.js 1.9.4
 
-Fix `modifier.function` is deprecated, use `modifier.fn` [#22](https://github.com/souporserious/react-popper/pull/22)
+Fix `modifier.function` is deprecated, use `modifier.fn` [#22](https://github.com/souporserious/inferno-popper/pull/22)
 
 ### 0.6.0
-Make sure to pass props from above down to child function, fixes [#13](https://github.com/souporserious/react-popper/issues/13)
+Make sure to pass props from above down to child function, fixes [#13](https://github.com/souporserious/inferno-popper/issues/13)
 
-Recalculate size of `Popper` when children change, fixes [#15](https://github.com/souporserious/react-popper/issues/15)
+Recalculate size of `Popper` when children change, fixes [#15](https://github.com/souporserious/inferno-popper/issues/15)
 
 ### 0.5.0
-Use `prop-types` package instead of React PropTypes [#9](https://github.com/souporserious/react-popper/pull/9)
+Use `prop-types` package instead of React PropTypes [#9](https://github.com/souporserious/inferno-popper/pull/9)
 
-Make updateState modifier return data object [#11](https://github.com/souporserious/react-popper/pull/11)
+Make updateState modifier return data object [#11](https://github.com/souporserious/inferno-popper/pull/11)
 
 Removed `findDOMNode` 🎉
 
@@ -68,7 +68,7 @@ Remove `getRef` function since it seems to be causing problems.
 
 Move functional components to classes so we can get nodes more reliably.
 
-Spread modifier styles inside `_getPopperStyle` [#6](https://github.com/souporserious/react-popper/pull/6)
+Spread modifier styles inside `_getPopperStyle` [#6](https://github.com/souporserious/inferno-popper/pull/6)
 
 ### 0.3.0
 Renamed `PopperManager` -> `Manager`
