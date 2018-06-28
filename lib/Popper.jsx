@@ -54,16 +54,13 @@ class Popper extends Component {
     }
   }
 
-  componentDidMount() {
-    this._updatePopper()
-  }
-
   componentDidUpdate(lastProps) {
     if (
       lastProps.placement !== this.props.placement ||
       lastProps.eventsEnabled !== this.props.eventsEnabled
     ) {
-      this._updatePopper()
+      this._destroyPopper()
+      this._createPopper()
     }
 
     if (this._popper && lastProps.children !== this.props.children) {
@@ -73,14 +70,6 @@ class Popper extends Component {
 
   componentWillUnmount() {
     this._destroyPopper()
-  }
-
-
-  _updatePopper() {
-    this._destroyPopper()
-    if (this._node) {
-      this._createPopper()
-    }
   }
 
   _createPopper() {
@@ -171,6 +160,11 @@ class Popper extends Component {
 
     const popperRef = node => {
       this._node = node
+      if(node) {
+        this._createPopper();
+      } else {
+        this._destroyPopper();
+      }
       if (typeof innerRef === 'function') {
         innerRef(node)
       }
