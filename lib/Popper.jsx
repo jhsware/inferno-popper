@@ -71,11 +71,12 @@ class Popper extends Component {
       }
     }
 
-    this._popper = new PopperJS(this._getTargetNode(), this._node, {
+    this._popper = new PopperJS(this._getTargetNode(), this._popperNode, {
       placement,
       eventsEnabled,
       modifiers,
     })
+    this._scheduleUpdate()
   }
 
   _destroyPopper() {
@@ -101,8 +102,8 @@ class Popper extends Component {
     }
   }
 
-  _getPopperRef (node) {
-    this._node = node
+  _handlePopperRef (node) {
+    this._popperNode = node
     if (node) {
       this._createPopper()
     } else {
@@ -140,7 +141,7 @@ class Popper extends Component {
 
     if (typeof children === 'function') {
       const popperProps = {
-        ref: this._getPopperRef,
+        ref: this._handlePopperRef,
         style: popperStyle,
         'data-placement': popperPlacement,
         'data-x-out-of-boundaries': popperHide,
@@ -159,9 +160,9 @@ class Popper extends Component {
     }
 
     if (typeof component === 'string') {
-      componentProps.ref = this._getPopperRef
+      componentProps.ref = this._handlePopperRef
     } else {
-      componentProps.innerRef = this._getPopperRef
+      componentProps.innerRef = this._handlePopperRef
     }
 
     return createElement(component, componentProps, children)
