@@ -91,6 +91,7 @@ class Popper extends Component {
 
     if (this._arrowNode) {
       modifiers.arrow = {
+        ...(this.props.modifiers.arrow || {}),
         element: this._arrowNode,
       }
     }
