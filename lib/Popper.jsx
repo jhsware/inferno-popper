@@ -82,7 +82,7 @@ class Popper extends Component {
   }
 
   _createPopper() {
-    const { placement, eventsEnabled } = this.props
+    const { placement, eventsEnabled, positionFixed } = this.props
     const modifiers = {
       ...this.props.modifiers,
       applyStyle: { enabled: false },
@@ -98,6 +98,7 @@ class Popper extends Component {
 
     this._popper = new PopperJS(this._getTargetNode(), this._popperNode, {
       placement,
+      positionFixed,
       eventsEnabled,
       modifiers,
     })
@@ -168,6 +169,7 @@ class Popper extends Component {
       innerRef,
       placement,
       eventsEnabled,
+      positionFixed,
       modifiers,
       children,
       ...restProps
