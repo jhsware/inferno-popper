@@ -77,12 +77,9 @@ export default function () {
 
 
 import { Component } from 'inferno'
-import { createElement } from 'inferno-create-element'
 
-import { Manager, Target, Popper, Arrow, Travel } from '../../../../index'
+import { Manager, Target, placements, Popper, Arrow, Travel } from '../../../../src'
 const Portal = Travel
-import PopperJS from '../../../../node_modules/popper.js/dist/umd/popper.js'
-const placements = PopperJS.placements
 
 const modifiers = {
   customStyle: {
