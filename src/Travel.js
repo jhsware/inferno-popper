@@ -1,6 +1,4 @@
 import { Component, createPortal } from 'inferno'
-import { createElement } from 'inferno-create-element'
-
 import { Children } from './compat'
 
 const noop = () => null

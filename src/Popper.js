@@ -4,56 +4,17 @@ import PopperJS from 'popper.js'
 
 export const placements = PopperJS.placements
 
+const defaultProps = {
+  component: 'div',
+  placement: 'bottom',
+  eventsEnabled: true,
+  positionFixed: false,
+  modifiers: {},
+}
+
 class Popper extends Component {
-  constructor (props) {
-    super(props)
 
-    this.state = {}
-
-    this._setArrowNode = node => {
-      this._arrowNode = node
-    }
-  
-    this._getTargetNode = () => {
-      if (this.props.target) {
-        return this.props.target
-      } else if (
-        !this.context.popperManager ||
-        !this.context.popperManager.getTargetNode()
-      ) {
-        throw new Error(
-          'Target missing. Popper must be given a target from the Popper Manager, or as a prop.',
-        )
-      }
-      return this.context.popperManager.getTargetNode()
-    }
-
-    _getOffsets = data => {
-      return Object.keys(data.offsets).map(key => data.offsets[key])
-    }
-  
-    _isDataDirty = data => {
-      if (this.state.data) {
-        return (
-          JSON.stringify(this._getOffsets(this.state.data)) !==
-          JSON.stringify(this._getOffsets(data))
-        )
-      } else {
-        return true
-      }
-    }
-
-    this._updateStateModifier = {
-      enabled: true,
-      order: 900,
-      fn: data => {
-        if (this._isDataDirty(data)) {
-          this.setState({ data })
-        }
-        return data
-      }
-    }
-  }
+  state = {}
 
   getChildContext() {
     return {
@@ -83,7 +44,51 @@ class Popper extends Component {
     this._destroyPopper()
   }
 
-  _createPopper() {
+  _setArrowNode (node) {
+    this._arrowNode = node
+  }
+
+  _getTargetNode () {
+    if (this.props.target) {
+      return this.props.target
+    } else if (
+      !this.context.popperManager ||
+      !this.context.popperManager.getTargetNode()
+    ) {
+      throw new Error(
+        'Target missing. Popper must be given a target from the Popper Manager, or as a prop.',
+      )
+    }
+    return this.context.popperManager.getTargetNode()
+  }
+
+  _getOffsets (data) {
+    return Object.keys(data.offsets).map(key => data.offsets[key])
+  }
+
+  _isDataDirty (data) {
+    if (this.state.data) {
+      return (
+        JSON.stringify(this._getOffsets(this.state.data)) !==
+        JSON.stringify(this._getOffsets(data))
+      )
+    } else {
+      return true
+    }
+  }
+
+  _updateStateModifier = {
+    enabled: true,
+    order: 900,
+    fn: data => {
+      if (this._isDataDirty(data)) {
+        this.setState({ data })
+      }
+      return data
+    }
+  }
+
+  _createPopper () {
     const { placement, eventsEnabled, positionFixed } = this.props
     const modifiers = {
       ...this.props.modifiers,
@@ -149,7 +154,7 @@ class Popper extends Component {
     }
   }
 
-  _handlePopperRef (node) {
+  _handlePopperRef = node => {
     this._popperNode = node
     if (node) {
       this._createPopper()
@@ -220,5 +225,7 @@ class Popper extends Component {
     return createElement(component, componentProps, children)
   }
 }
+
+Popper.defaultProps = defaultProps
 
 export default Popper
