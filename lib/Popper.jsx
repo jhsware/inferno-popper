@@ -181,10 +181,12 @@ class Popper extends Component {
       return children({
         popperProps,
         restProps,
-        // _createPopper will scheduleUpdate,
-        // so calling this before this._popper exists
-        // can be a noop.
-        scheduleUpdate: this._popper && this._popper.scheduleUpdate,
+        scheduleUpdate: () => {
+          // _createPopper will scheduleUpdate,
+          // so calling this before this._popper exists
+          // can be a noop.
+          this._popper && this._popper.scheduleUpdate();
+        },
       })
     }
 
