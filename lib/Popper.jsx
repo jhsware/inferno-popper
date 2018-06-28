@@ -16,14 +16,26 @@ class Popper extends Component {
       return this.context.popperManager.getTargetNode()
     }
 
+    _getOffsets = data => {
+      return Object.keys(data.offsets).map(key => data.offsets[key])
+    }
+  
+    _isDataDirty = data => {
+      if (this.state.data) {
+        return (
+          JSON.stringify(this._getOffsets(this.state.data)) !==
+          JSON.stringify(this._getOffsets(data))
+        )
+      } else {
+        return true
+      }
+    }
+
     this._updateStateModifier = {
       enabled: true,
       order: 900,
       fn: data => {
-        if (
-          data.placement !== this.state.placement ||
-          data.hide !== this.state.hide
-        ) {
+        if (this._isDataDirty(data)) {
           this.setState({ data })
         }
         return data
@@ -62,6 +74,7 @@ class Popper extends Component {
     const { placement, eventsEnabled } = this.props
     const modifiers = {
       ...this.props.modifiers,
+      applyStyle: { enabled: false },
       updateState: this._updateStateModifier,
     }
 
@@ -76,12 +89,31 @@ class Popper extends Component {
       eventsEnabled,
       modifiers,
     })
-    this._scheduleUpdate()
+    
+    // TODO: look into setTimeout scheduleUpdate call, without it, the popper will not position properly on creation
+    setTimeout(() => this._scheduleUpdate())
   }
 
   _destroyPopper() {
     if (this._popper) {
       this._popper.destroy()
+    }
+  }
+
+  _getPopperStyle() {
+    const { data } = this.state
+
+    if (!this._popper || !data) {
+      return {
+        position: 'absolute',
+        pointerEvents: 'none',
+        opacity: 0,
+      }
+    }
+
+    return {
+      position: data.offsets.popper.position,
+      ...data.styles,
     }
   }
 
@@ -155,6 +187,10 @@ class Popper extends Component {
 
     const componentProps = {
       ...restProps,
+      style: {
+        ...restProps.style,
+        ...popperStyle,
+      },
       'data-placement': popperPlacement,
       'data-x-out-of-boundaries': popperHide,
     }
