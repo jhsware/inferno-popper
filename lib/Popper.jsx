@@ -13,6 +13,16 @@ class Popper extends Component {
     }
   
     this._getTargetNode = () => {
+      if (this.props.target) {
+        return this.props.target
+      } else if (
+        !this.context.popperManager ||
+        !this.context.popperManager.getTargetNode()
+      ) {
+        throw new Error(
+          'Target missing. Popper must be given a target from the Popper Manager, or as a prop.',
+        )
+      }
       return this.context.popperManager.getTargetNode()
     }
 
@@ -55,7 +65,8 @@ class Popper extends Component {
   componentDidUpdate(lastProps) {
     if (
       lastProps.placement !== this.props.placement ||
-      lastProps.eventsEnabled !== this.props.eventsEnabled
+      lastProps.eventsEnabled !== this.props.eventsEnabled ||
+      lastProps.target !== this.props.target
     ) {
       this._destroyPopper()
       this._createPopper()
