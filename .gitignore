@@ -21,3 +21,4 @@ coverage
 .project
 .tmp
 .vscode
+lib
