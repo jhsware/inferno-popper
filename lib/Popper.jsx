@@ -2,8 +2,6 @@ import { Component } from 'inferno'
 import { createElement } from 'inferno-create-element'
 import PopperJS from 'popper.js'
 
-const noop = () => null
-
 class Popper extends Component {
   constructor (props) {
     super(props)
@@ -63,7 +61,7 @@ class Popper extends Component {
       this._createPopper()
     }
 
-    if (this._popper && lastProps.children !== this.props.children) {
+    if (lastProps.children !== this.props.children) {
       this._popper.scheduleUpdate()
     }
   }
@@ -92,7 +90,7 @@ class Popper extends Component {
       modifiers,
     })
 
-    // schedule an update to make sure everything gets positioned correct
+    // schedule an update to make sure everything gets positioned correctly
     // after being instantiated
     this._popper.scheduleUpdate()
   }
@@ -108,7 +106,7 @@ class Popper extends Component {
 
     // If Popper isn't instantiated, hide the popperElement
     // to avoid flash of unstyled content
-    if (!this._popper || !data) {
+    if (!data) {
       return {
         position: 'absolute',
         pointerEvents: 'none',
@@ -125,7 +123,7 @@ class Popper extends Component {
   }
 
   _getPopperPlacement() {
-    return !!this.state.data ? this.state.data.placement : undefined
+    return this.state.data ? this.state.data.placement : undefined
   }
 
   _getPopperHide () {
@@ -183,6 +181,9 @@ class Popper extends Component {
       return children({
         popperProps,
         restProps,
+        // _createPopper will scheduleUpdate,
+        // so calling this before this._popper exists
+        // can be a noop.
         scheduleUpdate: this._popper && this._popper.scheduleUpdate,
       })
     }
