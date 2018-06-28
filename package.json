@@ -17,7 +17,7 @@
     "build-test-dev": "rm -rf ./test/dist && node_modules/.bin/webpack --watch --config ./test/browser/webpack.config.js",
     "postbuild": "cross-env NODE_ENV=production && cross-env TARGET=minify webpack --config webpack.prod.config.js",
     "postversion": "git push && git push --tags",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
