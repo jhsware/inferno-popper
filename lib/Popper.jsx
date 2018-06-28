@@ -66,7 +66,7 @@ class Popper extends Component {
       this._updatePopper()
     }
 
-    if (this._popper) {
+    if (this._popper && lastProps.children !== this.props.children) {
       this._popper.scheduleUpdate()
     }
   }
