@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "popper.js": "^1.10.8"
+    "popper.js": "^1.12.9"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

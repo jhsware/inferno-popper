@@ -142,8 +142,8 @@ class Popper extends Component {
       const popperProps = {
         ref: this._getPopperRef,
         style: popperStyle,
-        ['data-placement']: popperPlacement,
-        ['data-x-out-of-boundaries']: popperHide,
+        'data-placement': popperPlacement,
+        'data-x-out-of-boundaries': popperHide,
       }
       return children({
         popperProps,
