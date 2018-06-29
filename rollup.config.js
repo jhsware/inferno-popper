@@ -10,7 +10,7 @@ const baseConfig = (outputFormat) => {
   switch (outputFormat) {
     case 'umd':
     case 'cjs':
-      file = 'dist/' + outputFormat + '/inferno-popper' + (isProduction ? '.min' : '') + '.js';
+      file = 'dist/' + outputFormat + '/index' + (isProduction ? '.min' : '') + '.js';
       break;
 
     default:
