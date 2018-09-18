@@ -1,4 +1,5 @@
 # inferno-popper
+[![gzip size](http://img.badgesize.io/https://unpkg.com/inferno-popper/dist/cjs/index.min.js?compression=gzip)](https://unpkg.com/inferno-popper/dist/cjs/index.min.js)
 
 Inferno wrapper for [PopperJS](https://github.com/FezVrasta/popper.js/) ported from [inferno-popper](https://github.com/souporserious/inferno-popper).
 
