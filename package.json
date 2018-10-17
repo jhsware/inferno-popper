@@ -1,6 +1,6 @@
 {
   "name": "inferno-popper",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Inferno wrapper around PopperJS.",
   "main": "dist/cjs/index.js",
   "umd:main": "dist/umd/index.js",
@@ -51,10 +51,11 @@
     "url": "https://github.com/jhsware/inferno-popper/issues"
   },
   "dependencies": {
+    "@babel/runtime": "^7.1.2",
     "classnames": "^2.2.6",
-    "inferno": "^6.0.2",
-    "inferno-create-element": "^6.0.2",
-    "inferno-shared": "^6.0.2",
+    "inferno": "^6.0.3",
+    "inferno-create-element": "^6.0.3",
+    "inferno-shared": "^6.0.3",
     "popper.js": "^1.14.4"
   },
   "devDependencies": {
@@ -78,7 +79,7 @@
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-inferno": "6.0.0",
     "babel-preset-inferno-app": "^8.0.1",
-    "component-registry": "1.0.0-rc.6",
+    "component-registry": "1.0.0-rc.7",
     "create-inferno-app": "^7.0.5",
     "cross-env": "^5.2.0",
     "express": "^4.16.2",
@@ -88,7 +89,7 @@
     "inferno-devtools": "^6.0.2",
     "inferno-shared": "^6.0.2",
     "inferno-test-utils": "^6.0.2",
-    "isomorphic-schema": "1.0.0-beta.6",
+    "isomorphic-schema": "1.0.0-beta.7",
     "jest": "^20.0.4",
     "rollup": "^0.66.6",
     "rollup-plugin-babel": "^4.0.3",
