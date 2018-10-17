@@ -1,6 +1,6 @@
 {
   "name": "inferno-popper",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "Inferno wrapper around PopperJS.",
   "main": "dist/cjs/index.js",
   "umd:main": "dist/umd/index.js",
@@ -63,7 +63,7 @@
     "node-libs-browser": "^1.0.0",
     "outy": "^0.1.2",
     "parcel-bundler": "^1.6.2",
-    "prismjs": "^1.6.0",    
+    "prismjs": "^1.6.0",
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/plugin-external-helpers": "^7.0.0",
