@@ -4,11 +4,15 @@
 Inferno wrapper for [PopperJS](https://github.com/FezVrasta/popper.js/) ported from [inferno-popper](https://github.com/souporserious/inferno-popper).
 
 ## Compatibility
-inferno-popper 5.x supports Inferno v5 (master)
+inferno-popper 7.x supports Inferno v7
 
-inferno-popper 4.x supports Inferno v4 (master)
+inferno-popper 6.x supports Inferno v6
 
-inferno-popper 3.x supports Inferno v3 (InfernoV3 branch)
+inferno-popper 5.x supports Inferno v5
+
+inferno-popper 4.x supports Inferno v4
+
+inferno-popper 3.x supports Inferno v3 (code in InfernoV3 branch)
 
 ## Install
 
