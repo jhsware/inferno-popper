@@ -1,6 +1,6 @@
 {
   "name": "inferno-popper",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Inferno wrapper around PopperJS.",
   "main": "dist/cjs/index.js",
   "umd:main": "dist/umd/index.js",
@@ -26,7 +26,6 @@
     "precommit": "lint-staged",
     "format": "npm run lint -- --fix --quiet",
     "lint": "eslint --ext .js,.jsx src/ example/",
-
     "prepublish": "npm run build",
     "preversion": "npm run test",
     "postversion": "git push && git push --tags"
