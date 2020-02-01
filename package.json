@@ -25,7 +25,11 @@
     "prepare": "npm run build",
     "precommit": "lint-staged",
     "format": "npm run lint -- --fix --quiet",
-    "lint": "eslint --ext .js,.jsx src/ example/"
+    "lint": "eslint --ext .js,.jsx src/ example/",
+
+    "prepublish": "npm run build",
+    "preversion": "npm run test",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
